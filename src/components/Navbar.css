@@ -1,0 +1,30 @@
+.navbar {
+    border-bottom: thick double black;
+    margin-inline: 2em;
+}
+
+.navbarList {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbarLink {
+    padding-inline: 1em;
+    font-size: var(--fs-abstracts);
+    font-family: var(--ff-secondary);
+}
+
+a, a:hover {
+    color: var(--secondary-color);
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.icon {
+    color: var(--tertiary-color);
+    font-weight: lighter;
+    font-size: small;
+}

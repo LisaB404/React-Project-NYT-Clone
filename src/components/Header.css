@@ -1,0 +1,35 @@
+.top {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.loginBtn {
+    background-color: var(--btn-color);
+    color: white;
+    border-radius: 3px;
+    padding: 5px 20px 5px 20px;
+    border: 1px solid rgb(50, 104, 145);
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+}
+
+.loginBtn:hover{
+    background-color: rgb(50, 104, 145);
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.titleLogo {
+    height: auto;
+    max-width: 600px;
+    min-width: 200px;
+    padding-inline: 5em;
+}

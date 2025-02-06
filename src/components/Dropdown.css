@@ -1,0 +1,24 @@
+.dropdownContainer{
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    width: 50%;
+    transform: translateX(-25%);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.section, ul{
+    color: var(--tertiary-color);
+    font-weight: lighter;
+    font-size: var(--fs-abstracts);
+    font-family: var(--ff-secondary);
+    padding-inline: 4em;
+    padding-bottom: 1.5em;
+    line-height: 1.5em;
+}
+
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

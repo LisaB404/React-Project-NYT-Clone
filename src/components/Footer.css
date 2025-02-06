@@ -1,0 +1,31 @@
+.footer {
+    width: 100%;
+    padding: 1rem 1.5rem 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .copyright {
+    color: var(--primary-color);
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-abstracts);
+  }
+  
+  .link {
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      flex-direction: row;
+      gap: 0.2rem;
+    }
+  }

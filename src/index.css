@@ -1,0 +1,21 @@
+:root {
+    /*custom variables*/
+    /*colors*/
+    --primary-color: hsla(0, 0%, 7.06%, 1); /*main*/
+    --secondary-color: hsla(0, 0%, 21.18%, 1); /*links and abstract*/
+    --tertiary-color: hsla(0,0%,44.71%,1); /*footer*/
+    --btn-color: rgb(86, 123, 149);
+
+    /*fonts*/
+    --ff-titles: "Times New Roman", Times, serif;
+    --ff-secondary: "Arial", sans-serif;
+    
+    /*font weights*/
+    --fw-normal: 400;
+    --fw-bold: 600;
+
+    /*font sizes*/
+    --fs-titles: 1.375rem;
+    --fs-abstracts: 0.875rem;
+    --fs-credits: 0.625rem;
+  }
