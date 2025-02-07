@@ -18,13 +18,17 @@ export default function SearchResults({ query }) {
     setLoading(true);
     setError(null);
 
-    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${API_KEY}`;
-    console.log("Chiamata API:", url); // 🔍 Controlliamo che la query sia corretta
+    const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&sort=relevance&api-key=${API_KEY}`;
+    console.log("Chiamata API:", url);
 
     axios.get(url)
       .then((response) => {
-        console.log("Risultati API:", response.data.response.docs); // 🔍 Stampiamo i risultati
-        setArticles(response.data.response.docs);
+        if (response.data.response.docs.length > 0) {
+          console.log("Risultati API:", response.data.response.docs);
+          setArticles(response.data.response.docs);
+        } else {
+          setArticles([]); // Nessun risultato trovato
+        }
       })
       .catch((err) => {
         console.error("Errore API:", err);
