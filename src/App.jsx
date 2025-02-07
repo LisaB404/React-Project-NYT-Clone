@@ -6,22 +6,19 @@ import Navbar from "./components/Navbar"
 import Article from "./components/Article"
 import SearchResults from "./components/SearchResults";
 import Footer from './components/Footer'
-import SearchBar from './components/Searchbar'
 
 function App() {
-  //const [count, setCount] = useState(0)
   const [query, setQuery] = useState(""); // Stato per la ricerca
 
-  const handleSearch = (newQuery) => {
-    setQuery(newQuery); // Imposta la nuova query ricevuta dal SearchBar
-  };
+   /* const handleSearch = (searchQuery) => {
+    setQuery(searchQuery); // Imposta la nuova query ricevuta dal SearchBar
+  };  */
 
   return (
-    <>
-      <Header onSearch={setQuery} />
+    <> 
+      <Header onSearch={setQuery} /> {/* Passiamo la funzione di ricerca al Header */}
       <Navbar />
-      <Article />
-      {query && <SearchResults query={query} />}
+      {query ? <SearchResults query={query} /> : <Article />} {/* Mostra risultati se c'è una ricerca */}
       <Footer />
     </>
   )

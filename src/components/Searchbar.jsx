@@ -13,6 +13,7 @@ export default function SearchBar({ onSearch }) {
     }
   };
 
+
   return (
     <div className="searchContainer">
       <button className="searchIcon" onClick={() => setShowSearch(!showSearch)}>
@@ -26,7 +27,9 @@ export default function SearchBar({ onSearch }) {
             placeholder="SEARCH"
             className="searchInput"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()} // Invio per cercare
+
           />
           <button className="searchBtn" onClick={handleSearch}>GO</button>
         </div>

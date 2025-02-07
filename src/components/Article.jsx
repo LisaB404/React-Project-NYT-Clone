@@ -47,9 +47,14 @@ function ArticlePreview({ article, index }) {
     return <p>No article found.</p>;
   }
 
-  const { url, title, abstract, byline, multimedia } = article;
+  const { url, title, abstract, byline, multimedia, section } = article;
   const imageUrl = multimedia?.[0]?.url;
 
+  // Condizione per mostrare l'articolo solo se la sezione è uguale alla query
+  if (section && section !== article.section) {
+    return null; // Non mostrare l'articolo se la sezione non corrisponde alla query
+  }
+  
   return (
     <div key={index} className="article">
       <div className="col">
