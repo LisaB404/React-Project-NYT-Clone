@@ -42,30 +42,30 @@ export default function Article() {
   );
 }
 
-function ArticlePreview({ article, index }) {
+export function ArticlePreview({ article, index }) {
   if (!article) {
     return <p>No article found.</p>;
   }
 
-  const { url, title, abstract, byline, multimedia, section } = article;
+  const { web_url, title, abstract, byline, multimedia, section } = article;
   const imageUrl = multimedia?.[0]?.url;
 
   // Condizione per mostrare l'articolo solo se la sezione è uguale alla query
   if (section && section !== article.section) {
     return null; // Non mostrare l'articolo se la sezione non corrisponde alla query
   }
-  
+
   return (
     <div key={index} className="article">
       <div className="col">
-        <a href={url} target="_blank" rel="noopener noreferrer">
+        <a href={web_url} target="_blank" rel="noopener noreferrer">
           <p className="articleTitle">{title}</p>
         </a>
         <p className="articleAbstract">{abstract}</p>
-        <p className="source">{byline}</p>
+        <p className="source">{byline || "Unknown Author"}</p>
       </div>
       <div className="col">
-        {imageUrl && <img src={imageUrl} alt={title} className="articleImg" /> || "No image found."}
+        {imageUrl && <img src={imageUrl} alt={multimedia?.[0]?.caption} className="articleImg" /> || "No image found."}
         <p className="source">{multimedia?.[0]?.copyright || "With no copyright"}</p>
       </div>
     </div>
