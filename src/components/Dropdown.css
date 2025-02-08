@@ -21,4 +21,10 @@ ul {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
 }

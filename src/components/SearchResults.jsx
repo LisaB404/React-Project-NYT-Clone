@@ -11,7 +11,7 @@ export default function SearchResults({ query }) {
 
   useEffect(() => {
     if (!query.trim()) {
-      setArticles([]);
+      setArticles(() => []);
       return; // Non fare chiamate API se la query è vuota o contiene solo spazi
     }
 
@@ -25,9 +25,9 @@ export default function SearchResults({ query }) {
       .then((response) => {
         if (response.data.response.docs.length > 0) {
           console.log("Risultati API:", response.data.response.docs);
-          setArticles(response.data.response.docs);
+          setArticles(() => response.data.response.docs);
         } else {
-          setArticles([]); // Nessun risultato trovato
+          setArticles(() => []); // Nessun risultato trovato
         }
       })
       .catch((err) => {

@@ -14,10 +14,10 @@ export default function Article() {
         );
 
         if (response.data && response.data.results) {
-          setArticles(response.data.results);
+          setArticles(() => response.data.results);
         } else {
           console.error("Invalid API response format.", response.data);
-          setArticles([]);
+          setArticles(() => []);
         }
       } catch (error) {
         console.error("Error in the news load:", error);
@@ -47,13 +47,8 @@ export function ArticlePreview({ article, index }) {
     return <p>No article found.</p>;
   }
 
-  const { web_url, title, abstract, byline, multimedia, section } = article;
+  const { web_url, title, abstract, byline, multimedia } = article;
   const imageUrl = multimedia?.[0]?.url;
-
-  // Condizione per mostrare l'articolo solo se la sezione è uguale alla query
-  if (section && section !== article.section) {
-    return null; // Non mostrare l'articolo se la sezione non corrisponde alla query
-  }
 
   return (
     <div key={index} className="article">
@@ -65,7 +60,7 @@ export function ArticlePreview({ article, index }) {
         <p className="source">{byline || "Unknown Author"}</p>
       </div>
       <div className="col">
-        {imageUrl && <img src={imageUrl} alt={multimedia?.[0]?.caption} className="articleImg" /> || "No image found."}
+        {imageUrl && <img src={imageUrl} alt={multimedia?.[0]?.caption} className="articleImg" />}
         <p className="source">{multimedia?.[0]?.copyright || "With no copyright"}</p>
       </div>
     </div>

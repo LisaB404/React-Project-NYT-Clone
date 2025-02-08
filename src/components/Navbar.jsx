@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
 
+
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null); // Stato per tracciare il dropdown attivo
 
