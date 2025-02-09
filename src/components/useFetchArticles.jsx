@@ -18,7 +18,7 @@ export default function useFetchArticles(query = "") {
         const url =
           query.trim() === ""
             ? `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`
-            : `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&sort=relevance&api-key=${API_KEY}`;
+            : `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query.toLowerCase()}&sort=relevance&api-key=${API_KEY}`;
 
         const response = await axios.get(url);
 
