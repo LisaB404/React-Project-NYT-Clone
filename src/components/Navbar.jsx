@@ -4,7 +4,6 @@ import { useState } from "react";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
 
-
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null); // Stato per tracciare il dropdown attivo
 
@@ -27,7 +26,7 @@ export default function Navbar() {
             onMouseEnter={() => setActiveDropdown(section.key)}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <a href="#">
+            <a href="/">
               {section.name} <FontAwesomeIcon icon={faChevronDown} className="icon" />
             </a>
             {activeDropdown === section.key && <Dropdown sections={section.sections} />}

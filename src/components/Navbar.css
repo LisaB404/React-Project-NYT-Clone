@@ -28,3 +28,9 @@ a:hover{
     font-weight: lighter;
     font-size: small;
 }
+
+/* Burger Navbar 
+.burgerNavbar .navbarList {
+    justify-content: left;
+    list-style: none;
+}*/

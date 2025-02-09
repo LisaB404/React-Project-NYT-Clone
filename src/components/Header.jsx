@@ -6,6 +6,8 @@ export default function Header({ onSearch}) {
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const date = new Date().toLocaleDateString('en-US', options);
 
+  console.log("Header ha ricevuto onSearch:", onSearch);
+  
   return (
     <>
     <div className="top">

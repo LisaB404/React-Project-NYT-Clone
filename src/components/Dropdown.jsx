@@ -7,7 +7,7 @@ export default function Dropdown({sections}) {
       <p className="section">SECTIONS</p>
       <ul>
         {sections.map((section, index) => (
-          <li key={index}><a href="#">{section}</a></li>
+          <li key={index}><a href="/">{section}</a></li>
         ))}
       </ul>
     </div>

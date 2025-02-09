@@ -1,27 +1,33 @@
-import { useState } from 'react'
-import "./index.css"
-import "./components/Navbar.css"
-import Header from "./components/Header"
-import Navbar from "./components/Navbar"
-import Article from "./components/Article"
+import { useState } from "react";
+import "./index.css";
+import "./components/Navbar.css";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Article from "./components/Article";
 import SearchResults from "./components/SearchResults";
-import Footer from './components/Footer'
-
+import Footer from "./components/Footer";
+//import BurgerMenu from "./components/BurgerMenu";
 function App() {
   const [query, setQuery] = useState(""); // Stato per la ricerca
 
-   /* const handleSearch = (searchQuery) => {
-    setQuery(searchQuery); // Imposta la nuova query ricevuta dal SearchBar
-  };  */
+  console.log("Query attuale in App prima del render:", query);
 
   return (
-    <> 
-      <Header onSearch={setQuery} /> {/* Passiamo la funzione di ricerca al Header */}
+    <>
+      <Header
+        onSearch={(query) => {
+          console.log("Aggiornamento query in App:", query);
+          setQuery(query);
+        }}
+      />
       <Navbar />
-      {query ? <SearchResults query={query} /> : <Article />} {/* Mostra risultati se c'è una ricerca */}
+      
+      {/* Se query è presente, mostra SearchResults, altrimenti mostra Article */}
+      {query.trim().length > 0 ? <SearchResults query={query} /> : <Article />}
+      
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

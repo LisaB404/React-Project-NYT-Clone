@@ -9,10 +9,12 @@ export default function SearchBar({ onSearch }) {
 
   const handleSearch = () => {
     if (query.trim()) {
+      console.log("Sto cercando:", query);
       onSearch(query); // Passa la query al componente genitore quando si preme "GO"
     }
   };
 
+  console.log("Query nello stato di App:", query);
 
   return (
     <div className="searchContainer">

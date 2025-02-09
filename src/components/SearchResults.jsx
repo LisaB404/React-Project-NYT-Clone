@@ -21,35 +21,42 @@ export default function SearchResults({ query }) {
     const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&sort=relevance&api-key=${API_KEY}`;
     console.log("Chiamata API:", url);
 
-    axios.get(url)
-      .then((response) => {
-        if (response.data.response.docs.length > 0) {
+    const fetchSearchResults = async () => {
+      try {
+        const response = await axios.get(url);
+        if (response.data && response.data.response && Array.isArray(response.data.response.docs)) {
           console.log("Risultati API:", response.data.response.docs);
           setArticles(() => response.data.response.docs);
         } else {
           setArticles(() => []); // Nessun risultato trovato
+          console.error("Invalid API response format.", response.data);
         }
-      })
-      .catch((err) => {
-        console.error("Errore API:", err);
+      } catch (error) {
+        console.error("Errore API:", error);
         setError("Error loading articles.");
-      })
-      .finally(() => setLoading(false));
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSearchResults();
   }, [query]); //quando query cambia, rifare ricerca
+
+  console.log("Rendering SearchResults con articoli:", articles);
 
   return (
     <>
-    <h2>Search Results for: {query}</h2>
-    <div className="wrapper">
-      <div className="articleContainer">
-        {loading && <p>Loading...</p>}
-        {error && <p>{error}</p>}
-        {articles.length === 0 && !loading && !error && <p>No articles found.</p>}
-        {articles.length > 0 && articles.map((article) => (
-          <ArticlePreview key={article._id} article={article} />
-        ))}
+      <h2>Search Results for: {query}</h2>
+      <div className="wrapper">
+        <div className="articleContainer">
+          {loading && <p>Loading...</p>}
+          {error && <p>{error}</p>}
+          {articles.length === 0 && !loading && !error && <p>No articles found.</p>}
+          {articles.length > 0 && articles.map((article) => (
+            <ArticlePreview key={article._id || article.uri} article={article} />
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 }

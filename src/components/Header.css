@@ -33,3 +33,21 @@
     min-width: 200px;
     padding-inline: 5em;
 }
+
+.menuIcon{
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.burgerNavbar{
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    .menuIcon{
+        display: none;
+    }
+  }
