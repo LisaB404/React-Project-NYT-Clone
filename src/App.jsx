@@ -15,10 +15,7 @@ function App() {
   return (
     <>
       <Header
-        onSearch={(query) => {
-          console.log("Aggiornamento query in App:", query);
-          setQuery(query);
-        }}
+        onSearch={setQuery}
       />
       <Navbar />
       
