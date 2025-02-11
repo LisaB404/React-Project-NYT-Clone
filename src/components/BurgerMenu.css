@@ -5,8 +5,19 @@
     width: 100%;
     background-color: white;
     padding: 0.5em;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    animation: fromLeft 2s ease-in-out;
   }
+
+  @keyframes fromLeft {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  .burgerMenuContainer
 
   .burgerTop {
     display: flex;

@@ -5,8 +5,6 @@ import SearchBar from "./Searchbar";
 export default function Header({ onSearch, isMobile }) {
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const date = new Date().toLocaleDateString('en-US', options);
-
-  console.log("Header ha ricevuto onSearch:", onSearch);
   
   return (
     <>
@@ -16,7 +14,7 @@ export default function Header({ onSearch, isMobile }) {
     </div>
     <div className="titleContainer">
         <p className="date">{date}</p>
-        <img src={logo} className="titleLogo" />
+        <a href="/"><img src={logo} className="titleLogo" /></a>
     </div>
     </>
   )

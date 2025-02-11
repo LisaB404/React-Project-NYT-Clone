@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+/* require('dotenv').config(); */
 
 export default function useFetchArticles(query = "") {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_KEY = "RZzaPkExJIq3w5Rzp7j6jdy5uS3lVKiH";
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     setIsLoading(true);

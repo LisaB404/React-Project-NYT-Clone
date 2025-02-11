@@ -1,7 +1,6 @@
 import "./ArticlePreview.css";
 
 export default function ArticlePreview({ article, index }) {
-  console.log("Rendering ArticlePreview con articolo:", article);
   if (!article) {
     return <p>No article found.</p>;
   }

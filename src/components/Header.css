@@ -29,13 +29,15 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 1em;
+    padding-top: 1em;
 }
 
 .titleLogo {
+    width: 50vw; /* occuperà il 50% della larghezza della viewport */
     height: auto;
     max-width: 600px;
-    min-width: 200px;
-    padding-inline: 5em;
+    min-width: 300px;
 }
 
 .menuIcon{
