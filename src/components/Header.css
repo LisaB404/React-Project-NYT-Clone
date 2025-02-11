@@ -5,6 +5,10 @@
     padding-right: 2em;
 }
 
+.hidden{
+    display: none;
+}
+
 .loginBtn {
     background-color: var(--btn-color);
     color: white;

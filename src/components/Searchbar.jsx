@@ -3,18 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./SearchBar.css";
 
-export default function SearchBar({ onSearch }) {
-  const [showSearch, setShowSearch] = useState(false);
+export default function SearchBar({ onSearch, alwaysOpen = false }) {
+  const [showSearch, setShowSearch] = useState(alwaysOpen);
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
     if (query.trim()) {
-      console.log("Sto cercando:", query);
       onSearch(query); // Passa la query al componente genitore quando si preme "GO"
     }
   };
-
-  console.log("Query nello stato di App:", query);
 
   return (
     <div className="searchContainer">

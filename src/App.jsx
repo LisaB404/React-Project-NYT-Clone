@@ -7,20 +7,30 @@ import Article from "./components/Article";
 import SearchResults from "./components/SearchResults";
 import SectionArticles from "./components/SectionArticles";
 import Footer from "./components/Footer";
-//import BurgerMenu from "./components/BurgerMenu";
+import BurgerMenu from "./components/burgerMenu";
+import getWindowDimensions from "./components/getWindowDimensions";
 
 function App() {
+  const { width } = getWindowDimensions(); // Ottieni la larghezza della finestra
   const [query, setQuery] = useState(""); // Stato per la ricerca
   const [selectedSection, setSelectedSection] = useState(""); // Stato per la sezione selezionata
 
-  console.log("Query attuale in App prima del render:", query);
+    // Definisci il breakpoint: sotto 768px consideriamo un dispositivo mobile
+    const isMobile = width < 768;
 
   return (
     <>
       <Header
         onSearch={setQuery}
+        isMobile={isMobile}
       />
-      <Navbar onSectionSelect={setSelectedSection} />
+
+      {/* Mostra BurgerMenu su mobile, altrimenti Navbar */}
+      {isMobile ? (
+        <BurgerMenu onSelect={setSelectedSection} onSearch={setQuery}/>
+      ) : (
+        <Navbar onSectionSelect={setSelectedSection} />
+      )}
       
       {/* Se è stata inserita una query, mostra SearchResults; 
           altrimenti, se è stata selezionata una sezione, mostra gli articoli per quella sezione; 

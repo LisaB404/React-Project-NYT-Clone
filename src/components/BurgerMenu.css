@@ -1,0 +1,69 @@
+.burgerMenuContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 0.5em;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .burgerTop {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  
+  .loginBtnBurger {
+    font-size: 14px;
+    background-color: var(--btn-color);
+    color: white;
+    border-radius: 3px;
+    padding: 8px 20px;
+    border: 1px solid rgb(50, 104, 145);
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    width: 20em;
+}
+
+.loginBtn:hover{
+    background-color: rgb(50, 104, 145);
+}
+
+  .menuIcon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .burgerNavbar {
+    padding: 2em;
+    width: 100%;
+  }
+  
+  .burgerNavbarList {
+    list-style-type: none;
+    padding: 0;
+    display: block;
+  }
+  
+  .burgerNavbarSection {
+    margin-bottom: 10px;
+  }
+  
+  .burgerSectionName {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--primary-color);
+  }
+  
+  .burgerSubsectionList {
+    list-style-type: none;
+    padding: 0.5em;
+  }
+  
+  .burgerSubsectionItem {
+    font-size: 16px;
+    color: #555;
+    padding: 0;
+  }
