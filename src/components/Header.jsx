@@ -14,7 +14,7 @@ export default function Header({ onSearch, isMobile }) {
     </div>
     <div className="titleContainer">
         <p className="date">{date}</p>
-        <a href="/React-Project-NYT-Clone/"><img src={logo} className="titleLogo" /></a>
+        <a href={`${import.meta.env.BASE_URL}`}><img src={logo} className="titleLogo" /></a>
     </div>
     </>
   )
