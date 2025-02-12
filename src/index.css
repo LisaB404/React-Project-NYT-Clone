@@ -1,4 +1,6 @@
 :root {
+    overflow-x: hidden;
+
     /*custom variables*/
     /*colors*/
     --primary-color: hsla(0, 0%, 7.06%, 1); /*main*/
@@ -21,7 +23,6 @@
   }
 
   html, body {
-    overflow-x: hidden;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
