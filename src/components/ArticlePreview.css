@@ -1,6 +1,6 @@
 .article {
   display: flex;
-  flex-direction: column; /* Mobile: tutto in colonna */
+  flex-direction: column;
   gap: 1em;
   padding: 1em;
   border-bottom: 0.5px solid var(--tertiary-color);
@@ -25,7 +25,7 @@ a {
 }
 
 .articleImg {
-  width: 100%; /* Immagine prende tutta la larghezza su mobile */
+  width: 100%;
 }
 
 .source {
@@ -38,22 +38,22 @@ a {
 /* Stile per DESKTOP */
 @media (min-width: 768px) {
   .article {
-      flex-direction: row; /* Immagine a destra, testo a sinistra */
+      flex-direction: row;
       gap: 2rem;
       padding: 2em;
-      align-items: center; /* Centra verticalmente */
+      align-items: center;
   }
 
   .col:first-child { 
-      order: 1; /* Testo a sinistra */
+      order: 1;
   }
 
   .col:last-child {
-      order: 2; /* Immagine a destra */
-      max-width: 40%; /* Limitiamo la dimensione dell'immagine */
+      order: 2;
+      max-width: 40%;
   }
 
   .articleImg {
-      width: 100%; /* L'immagine occupa tutta la colonna */
+      width: 100%;
   }
 }

@@ -1,4 +1,3 @@
-// src/hooks/useWindowDimensions.js
 import { useState, useEffect } from 'react';
 
 function getWindowDimensions() {

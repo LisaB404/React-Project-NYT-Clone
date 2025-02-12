@@ -1,9 +1,8 @@
-import "./SectionArticles.css"; // eventuali stili dedicati
+import "./SectionArticles.css";
 import useFetchArticles from "./useFetchArticles";
 import ArticlePreview from "./ArticlePreview";
 
 export default function SectionArticles({ section }) {
-  // Utilizza il custom hook passando la sezione selezionata
   const { articles, isLoading, error } = useFetchArticles(section);
 
   return (

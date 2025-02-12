@@ -5,7 +5,7 @@ import "./Navbar.css";
 import Dropdown from "./Dropdown";
 
 export default function Navbar({ onSectionSelect }) {
-  const [activeDropdown, setActiveDropdown] = useState(null); // Stato per tracciare il dropdown attivo
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   const sections = [
     { name: "U.S.", key: "us", sections: ["U.S.", "Politics", "New York", "Education", "Health", "Obituaries", "Science", "Climate", "Business", "Tech", "The Upshot", "The Magazine"] },

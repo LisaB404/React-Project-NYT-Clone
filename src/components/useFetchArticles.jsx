@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-/* require('dotenv').config(); */
 
 export default function useFetchArticles(query = "") {
   const [articles, setArticles] = useState([]);
@@ -15,7 +14,6 @@ export default function useFetchArticles(query = "") {
 
     const fetchArticles = async () => {
       try {
-        // Se query è vuota, prendi le top stories, altrimenti i risultati della ricerca
         const url =
           query.trim() === ""
             ? `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`

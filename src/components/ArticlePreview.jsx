@@ -5,16 +5,12 @@ export default function ArticlePreview({ article, index }) {
     return <p>No article found.</p>;
   }
 
-  // Determina se l'articolo proviene dai risultati di ricerca
   const isSearchResult = article.headline !== undefined;
 
-  // Per il titolo: usa article.title oppure article.headline.main se non presente title
   const articleTitle = article.title || (article.headline && article.headline.main) || "No title available";
   
-  // Per l'abstract: se non è disponibile, puoi usare snippet (se presente)
   const articleAbstract = article.abstract || article.snippet || "No abstract available";
 
-  // Per il byline: se è un oggetto, usa la proprietà "original"
   let articleByline = "Unknown Author";
   if (article.byline) {
     if (typeof article.byline === "object") {
@@ -24,11 +20,9 @@ export default function ArticlePreview({ article, index }) {
     }
   }
 
-  // Per l'immagine: controlla se esiste un'immagine e, se necessario, completa l'URL
   let imageUrl = "";
   if (article.multimedia && article.multimedia.length > 0) {
     if (isSearchResult) {
-      // Nell'API di ricerca, l'URL potrebbe essere relativo
       imageUrl = article.multimedia[0].url
         ? `https://www.nytimes.com/${article.multimedia[0].url}`
         : "";

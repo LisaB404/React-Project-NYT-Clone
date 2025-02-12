@@ -9,7 +9,7 @@ export default function SearchBar({ onSearch, alwaysOpen = false }) {
 
   const handleSearch = () => {
     if (query.trim()) {
-      onSearch(query); // Passa la query al componente genitore quando si preme "GO"
+      onSearch(query);
     }
   };
 
@@ -27,7 +27,7 @@ export default function SearchBar({ onSearch, alwaysOpen = false }) {
             className="searchInput"
             value={query}
           onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleSearch()} // Invio per cercare
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()}
 
           />
           <button className="searchBtn" onClick={handleSearch}>GO</button>

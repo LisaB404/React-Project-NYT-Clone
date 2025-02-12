@@ -34,7 +34,7 @@
 }
 
 .titleLogo {
-    width: 50vw; /* occuperà il 50% della larghezza della viewport */
+    width: 50vw;
     height: auto;
     max-width: 600px;
     min-width: 300px;

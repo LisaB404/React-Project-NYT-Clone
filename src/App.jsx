@@ -11,11 +11,10 @@ import BurgerMenu from "./components/burgerMenu";
 import getWindowDimensions from "./components/getWindowDimensions";
 
 function App() {
-  const { width } = getWindowDimensions(); // Ottieni la larghezza della finestra
-  const [query, setQuery] = useState(""); // Stato per la ricerca
-  const [selectedSection, setSelectedSection] = useState(""); // Stato per la sezione selezionata
+  const { width } = getWindowDimensions();
+  const [query, setQuery] = useState("");
+  const [selectedSection, setSelectedSection] = useState("");
 
-    // Definisci il breakpoint: sotto 768px consideriamo un dispositivo mobile
     const isMobile = width < 768;
 
   return (
@@ -25,16 +24,15 @@ function App() {
         isMobile={isMobile}
       />
 
-      {/* Mostra BurgerMenu su mobile, altrimenti Navbar */}
       {isMobile ? (
         <BurgerMenu onSelect={setSelectedSection} onSearch={setQuery}/>
       ) : (
         <Navbar onSectionSelect={setSelectedSection} />
       )}
       
-      {/* Se è stata inserita una query, mostra SearchResults; 
-          altrimenti, se è stata selezionata una sezione, mostra gli articoli per quella sezione; 
-          altrimenti mostra Article (es. top stories) */}
+      {/* if there is a query display SearchResults; 
+          is a section is selected display that section; 
+          otherwise show Article */}
           {query.trim().length > 0 ? (
         <SearchResults query={query} />
       ) : selectedSection.trim().length > 0 ? (

@@ -20,21 +20,20 @@ const sections = [
 
     return (
         <div className="burgerMenuContainer">
-        {/* Icona per aprire/chiudere il menu */}
         <FontAwesomeIcon 
           icon={faBars} 
           className="menuIcon" 
           onClick={() => setOpen(!open)}
         />
   
-        {/* Mostra il menu solo se `open` è true */}
+        {/* Show menu if open is true */}
         {open && (
           <div className="burgerNavbar">
             <div className="burgerTop">
             <SearchBar
               onSearch={(query) => {
-                onSearch(query); // esegue la ricerca
-                setOpen(false);  // chiude il menu
+                onSearch(query);
+                setOpen(false);
               }}
               alwaysOpen={true}
               setOpen={setOpen}
@@ -49,7 +48,7 @@ const sections = [
                     {section.sections.map((sub, index) => (
                       <a key={index} className="burgerSubsectionItem"
                         onClick={() => {
-                          onSearch(""); // Resetta la query di ricerca
+                          onSearch("");
                           onSelect(sub);
                           setOpen(!open);
                         }}>{sub}</a>

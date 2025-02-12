@@ -11,7 +11,7 @@ export default function Dropdown({ sections, onSelect }) {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                onSelect(section); // Notifica il componente genitore della selezione
+                onSelect(section);
               }}
             >
               {section}
