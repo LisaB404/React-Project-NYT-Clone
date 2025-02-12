@@ -1,6 +1,7 @@
 .top {
     display: flex;
     justify-content: space-between;
+    padding-top: 1em;
     padding-left: 2em;
     padding-right: 2em;
 }

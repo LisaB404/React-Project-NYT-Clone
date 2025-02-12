@@ -2,7 +2,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     background-color: white;
     padding: 0.5em;
     animation: fromLeft 2s ease-in-out;
@@ -47,7 +47,7 @@
   
   .burgerNavbar {
     padding: 2em;
-    width: 100%;
+    width: 100vw;
   }
   
   .burgerNavbarList {
