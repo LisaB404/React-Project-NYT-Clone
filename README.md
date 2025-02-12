@@ -6,7 +6,8 @@ This project is a clone of the New York Times made with React and the official A
 The application serves as a news article viewer, allowing users to search and browse articles from various sources.
 
 ## 📸 Screenshot
-![Screenshot of the application](src/assets/img/ogImage.png)
+![NYT Clone Screenshot](https://github.com/user-attachments/assets/f0bef5e3-ca5e-4bdc-b241-4f723df8a911)
+
 
 ## 🔗 Link
 https://lisab404.github.io/React-Project-NYT-Clone/
