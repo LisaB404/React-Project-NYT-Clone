@@ -1,13 +1,13 @@
-import "./SectionArticles.css";
-import useFetchArticles from "./useFetchArticles";
-import ArticlePreview from "./ArticlePreview";
+import "./SearchResults.css";
+import ArticlePreview from "../ArticlePreview/ArticlePreview";
+import useFetchArticles from "../../hooks/useFetchArticles";
 
-export default function SectionArticles({ section }) {
-  const { articles, isLoading, error } = useFetchArticles(section);
+export default function SearchResults({ query }) {
+  const { articles, isLoading, error } = useFetchArticles(query);
 
   return (
     <>
-      <h2>Articles for: {section}</h2>
+      <h2>Search Results for: {query}</h2>
       <div className="wrapper">
         <div className="articleContainer">
           {isLoading && <p>Loading...</p>}

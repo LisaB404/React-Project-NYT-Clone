@@ -1,6 +1,6 @@
-import logo from "../assets/img/logo.png";
+import logo from "../../assets/img/logo.png";
 import "./Header.css"
-import SearchBar from "./Searchbar";
+import SearchBar from "../Searchbar/Searchbar";
 
 export default function Header({ onSearch, isMobile }) {
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };

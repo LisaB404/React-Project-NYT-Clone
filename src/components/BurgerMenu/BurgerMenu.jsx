@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
-import SearchBar from "./Searchbar";
+import SearchBar from "../Searchbar/Searchbar";
 import { useState } from "react";
 import "./BurgerMenu.css";
 
