@@ -50,14 +50,13 @@ The project is organized into the following directories:
 ## Components
 The application consists of the following components:
 
-- App: The main application component.
-- Header: The header component that contains the search bar and navigation.
-- Navbar: The navigation bar component.
-- Article: The article component that displays article previews.
-- SearchResults: The search results component that displays a list of articles.
-- Footer: The footer component that contains copyright information.
-- Styles
-The application uses CSS Modules for styling. Global styles are defined in src/index.css, and component-specific styles are defined in their respective CSS files.
+- App: the main application component.
+- Header: contains the search bar, date, title and navigation.
+- Navbar: the navigation bar component with dropdown sections.
+- Article: component that displays article previews.
+- SearchResults: component that displays a list of articles.
+- Footer: component that contains copyright information.
+- Styles: the application uses CSS Modules for styling. Global styles are defined in src/index.css, and component-specific styles are defined in their respective CSS files.
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or features.
